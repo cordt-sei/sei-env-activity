@@ -45,21 +45,27 @@ This SQL query fetches data from both environments over several staggered dates 
 
 <summary>python</summary>
 
-The Python script does the following:
+Here's an updated summary of the Python script following your style:
 
-1. **Intake CSV Data:**
-   - Reads from specified CSV using `pd.read_csv()`.
+---
 
-2. **Data Processing:**
-   - Converts the 'DAY' column to a datetime format using `pd.to_datetime()` with error handling to coerce invalid entries to `NaT` (Not a Time).
-   - Drops rows where the 'DAY' column could not be converted to datetime (those with `NaT` values).
+### Python Script Overview
 
-3. **Plotting Functions:**
-   - `plot_top_interacted(data, output_file)`: Creates a horizontal bar chart of the top 10 contracts by interactions, sorted in descending order.
-   - `plot_interactions_by_environment(data, output_file)`: Creates a bar chart showing total interactions, by environment (EVM/CW).
+**Intake CSV Data:**
+- Reads data from the specified CSV file using `pd.read_csv()`.
 
-4. **Generates Visual Charts:**
-   - Uses plot data to generate visualized data and export as PNG files.
+**Data Processing:**
+- Converts the 'DAY' column to datetime format with `pd.to_datetime()`, handling errors by coercing invalid entries to `NaT`.
+- Removes rows where 'DAY' couldn't be converted to datetime (`NaT` values).
+
+**Plotting Functions:**
+1. **plot_top20_by_environment(data, environment, output_file):** Creates a horizontal bar chart of the top 20 contracts by interactions for each environment (EVM or CosmWasm), sorted in descending order.
+2. **plot_top10_overall(data, output_file):** Creates a bar chart for the top 10 most interacted contracts across all environments.
+3. **plot_interactions_by_environment(data, output_file):** Creates a bar chart showing total interactions by environment (EVM and CosmWasm).
+4. **plot_top20_excluding_top5(data, environment, output_file):** Generates a chart excluding the top 5 most interacted contracts in the specified environment, showing the next top 20. My reasoning for this was that the extreme outliers seen on the top end of the EVM environment are indicative of a script/bot, or some other automated action which is not directly relevant to this study and heavily skews the final result. **[to be re-asssessed upon further discovery]**
+
+**Generates Visual Charts:**
+- Utilizes the plotting functions to generate visual data representations, saving the charts as PNG files.
 
 </details>
 
