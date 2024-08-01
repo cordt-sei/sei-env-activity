@@ -62,7 +62,8 @@ Here's an updated summary of the Python script following your style:
 1. **plot_top20_by_environment(data, environment, output_file):** Creates a horizontal bar chart of the top 20 contracts by interactions for each environment (EVM or CosmWasm), sorted in descending order.
 2. **plot_top10_overall(data, output_file):** Creates a bar chart for the top 10 most interacted contracts across all environments.
 3. **plot_interactions_by_environment(data, output_file):** Creates a bar chart showing total interactions by environment (EVM and CosmWasm).
-4. **plot_top20_excluding_top5(data, environment, output_file):** Generates a chart excluding the top 5 most interacted contracts in the specified environment, showing the next top 20. My reasoning for this was that the extreme outliers seen on the top end of the EVM environment are indicative of a script/bot, or some other automated action which is not directly relevant to this study and heavily skews the final result. **[to be re-asssessed upon further discovery]**
+4. **plot_top20_excluding_top5(data, environment, output_file):** Generates a chart excluding the top 5 most interacted contracts in the specified environment, showing the next top 20. 
+The reasoning for this was that the extreme outliers seen on the top end of the EVM environment are indicative of script/bot activity, or some other automated action which is not directly relevant to this study and potentially heavily skews the final result. **[to be re-asssessed upon further discovery]**
 
 **Generates Visual Charts:**
 - Utilizes the plotting functions to generate visual data representations, saving the charts as PNG files.
