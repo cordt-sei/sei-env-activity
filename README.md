@@ -62,3 +62,11 @@ The Python script does the following:
    - Uses plot data to generate visualized data and export as PNG files.
 
 </details>
+
+
+## Additional Notes
+
+In order to give context to what types of activity this data is indicating, we will attempt to identify specifically what each of the contracts is being used for, and by whhat or by whom. 
+This is very important to consider when drawing any conclusions from the presented data. 
+
+This [reference sheet](https://github.com/cordt-sei/sei-env-activity/blob/main/labels.md) will be populated and updated as information arrives.
